@@ -1,0 +1,37 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "tsconfig.json",
+    "tsconfigRootDir": ".",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint/eslint-plugin", "prettier", "security"],
+  "extends": [
+    "airbnb-base",
+    "airbnb-typescript/base",
+    "plugin:@typescript-eslint/recommended-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
+    "plugin:security/recommended-legacy",
+    "plugin:prettier/recommended"
+  ],
+  "root": true,
+  "env": {
+    "node": true,
+    "jest": true
+  },
+  "overrides": [
+    {
+      "files": ["test/**", "**/*.spec.*"],
+      "plugins": ["jest"],
+      "extends": ["plugin:jest/recommended"]
+    }
+  ],
+  "rules": {
+    "@typescript-eslint/interface-name-prefix": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "class-methods-use-this": "off",
+    "import/prefer-default-export": "off"
+  }
+}
