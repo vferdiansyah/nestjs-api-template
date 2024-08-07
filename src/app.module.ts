@@ -24,11 +24,11 @@ import {
     ConfigModule.forRoot({
       load: [appConfig, jwtConfig, twilioConfig, typeOrmConfig],
     }),
-    LoggerModule.forRootAsync(loggerAsyncConfig),
     JwtModule.registerAsync({
       imports: [ConfigModule],
       useClass: JwtConfigService,
     }),
+    LoggerModule.forRootAsync(loggerAsyncConfig),
     ThrottlerModule.forRoot([
       {
         ttl: 15 * 60 * 1000, // 15 minutes,

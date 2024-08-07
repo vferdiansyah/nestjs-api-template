@@ -11,8 +11,10 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
     super({
       jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: configService.get<JwtConfig>(JWT_CONFIG_TOKEN).jwtSecret,
-      algorithms: [configService.get<JwtConfig>(JWT_CONFIG_TOKEN).jwtAlgorithm],
+      secretOrKey: configService.get<JwtConfig>(JWT_CONFIG_TOKEN)?.jwtSecret,
+      algorithms: [
+        configService.get<JwtConfig>(JWT_CONFIG_TOKEN)?.jwtAlgorithm,
+      ],
     });
   }
 

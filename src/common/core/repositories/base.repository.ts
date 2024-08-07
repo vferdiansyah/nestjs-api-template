@@ -8,7 +8,7 @@ import {
   QueryRunner,
   Repository,
 } from 'typeorm';
-import { BaseRepositoryInterface } from '../interface/base.interface';
+import { BaseRepositoryInterface } from '../interfaces/base.interface';
 
 export abstract class BaseRepository<T extends ObjectLiteral>
   implements BaseRepositoryInterface<T>
